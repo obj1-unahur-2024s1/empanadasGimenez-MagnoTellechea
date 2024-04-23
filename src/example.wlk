@@ -27,16 +27,20 @@ object galvan {
 		totalDinero = 0.max(totalDinero)
 	} 
 	method totalDeuda() = totalDeuda
+	method totalCobrado(){}
 }
 
 object baigorria {
 	var totalDinero = 0
+	var totalDineroCobrado = 0
 	const sueldo = empanadas.precioEmpanada() * empanadas.empanadasVendidas()
 	method sueldo() = sueldo
 	method cobrarSueldo(){
 		totalDinero =  totalDinero + sueldo
 	}
-	method totalCobrado() = sueldo + sueldo
+	method totalCobrado(){
+		totalDineroCobrado = totalDineroCobrado + self.sueldo()
+	}
 }
 
 object empanadas {
